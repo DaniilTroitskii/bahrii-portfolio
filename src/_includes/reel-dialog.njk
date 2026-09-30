@@ -1,0 +1,8 @@
+{#- Fullscreen showreel player. The iframe is inserted by main.js only when opened. -#}
+<dialog class="reel-dialog" id="reel-dialog" aria-label="{{ t.hero.reelTitle }}"
+        data-provider="{{ site.reel.provider }}" data-video-id="{{ site.reel.id }}">
+  <button class="reel-dialog__close" type="button" data-close-reel>
+    <span aria-hidden="true">×</span><span class="visually-hidden">{{ t.player.close }}</span>
+  </button>
+  <div class="reel-dialog__frame" data-reel-frame></div>
+</dialog>

@@ -1,0 +1,24 @@
+---
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>404 — {{ i18n.en.name }}</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="page-404">
+  <main class="container">
+    <h1 class="section__title">404</h1>
+    <ul class="site-footer__langs">
+      {%- for l in site.languages %}
+      <li><a href="/{{ l.code }}/" hreflang="{{ l.code }}" lang="{{ l.code }}">{{ l.name }}</a></li>
+      {%- endfor %}
+    </ul>
+  </main>
+</body>
+</html>

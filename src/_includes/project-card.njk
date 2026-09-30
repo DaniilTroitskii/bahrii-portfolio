@@ -1,0 +1,17 @@
+{#- Card in the Work grid. Expects: p (project), lang, t -#}
+{%- set cardTitle = p.title | filmTitle(lang) -%}
+<li class="card reveal">
+  <a class="card__link" href="/{{ lang }}/work/{{ p.slug }}/">
+    <div class="card__media">
+      {{ images[p.poster] | picture(t.project.posterAlt | fmt({ title: cardTitle }), "(min-width: 760px) 50vw, 100vw") | safe }}
+    </div>
+    <div class="card__body">
+      <h3 class="card__title">{{ cardTitle }}</h3>
+      <p class="card__meta">
+        <span>{{ p.year }}</span>
+        <span>{{ t.formats[p.format] }}</span>
+      </p>
+      <p class="card__role">{{ p.role | tr(lang) }}</p>
+    </div>
+  </a>
+</li>

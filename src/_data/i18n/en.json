@@ -1,0 +1,99 @@
+{
+  "_todo": "TODO: text in [brackets] is a placeholder — replace with real information.",
+  "name": "Yevhenii Bahrii",
+  "meta": {
+    "description": "Yevhenii Bahrii — director and cinematographer, Film and Media Arts graduate of the University of Utah. Showreel, short films, music videos and commercials.",
+    "projectTitle": "{title} ({year}) — {name}"
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "language": "Language",
+    "home": "Home page"
+  },
+  "nav": { "work": "Work", "video": "Video", "photo": "Photo", "about": "About", "awards": "Festivals", "contact": "Contact" },
+  "hero": {
+    "role": "Director & Cinematographer",
+    "tagline": "Intimate, character-driven stories told through light and stillness.",
+    "watchReel": "Watch Reel",
+    "reelTitle": "Showreel",
+    "posterAlt": "Frame from the showreel"
+  },
+  "work": { "title": "Selected Work" },
+  "videos": { "title": "Video", "play": "Play" },
+  "photos": {
+    "title": "Photography",
+    "alt": "Photo {n}",
+    "more": "Show more",
+    "prev": "Previous photo",
+    "next": "Next photo"
+  },
+  "formats": {
+    "short": "Short Film",
+    "music_video": "Music Video",
+    "commercial": "Commercial",
+    "documentary": "Documentary"
+  },
+  "project": {
+    "year": "Year",
+    "format": "Format",
+    "runtime": "Runtime",
+    "minutes": "{n} min",
+    "role": "My role",
+    "crew": "Credits",
+    "stills": "Stills",
+    "festivals": "Festivals & Awards",
+    "back": "All work",
+    "next": "Next project",
+    "play": "Play video",
+    "stillAlt": "Still {n} from “{title}”",
+    "posterAlt": "Still from “{title}”"
+  },
+  "crew": {
+    "director": "Director",
+    "writer": "Writer",
+    "dop": "Director of Photography",
+    "editor": "Editor",
+    "producer": "Producer",
+    "sound": "Sound",
+    "composer": "Composer",
+    "colorist": "Colorist",
+    "production_designer": "Production Designer",
+    "cast": "Cast"
+  },
+  "about": {
+    "title": "About",
+    "photoAlt": "Portrait of Yevhenii Bahrii",
+    "based": "Based in [City, State]",
+    "bio": [
+      "I'm a director and cinematographer drawn to quiet, character-driven stories — the things people leave unsaid.",
+      "At the University of Utah I made short fiction films, documentaries and music videos, often directing and operating the camera on the same project.",
+      "Light, performance and rhythm matter equally to me, and I do my best work with a small, committed crew.",
+      "I'm currently looking for projects as a director, cinematographer or member of a camera team."
+    ],
+    "education": "Education",
+    "degree": "[BA / BFA] in Film and Media Arts",
+    "school": "University of Utah",
+    "gradYear": "[2025]",
+    "skills": "Skills",
+    "skillsList": [
+      "Directing actors",
+      "Cinematography & lighting",
+      "Editing",
+      "Color grading",
+      "Screenwriting",
+      "On-set production"
+    ],
+    "gear": "Gear & Software",
+    "gearCategories": { "cameras": "Cameras", "lighting": "Lighting", "post": "Post-production" },
+    "resume": "Download résumé (PDF)"
+  },
+  "awards": { "title": "Festivals & Awards" },
+  "contact": {
+    "title": "Let's work together",
+    "lead": "Available for short films, music videos, commercials and documentaries. Email is the fastest way to reach me.",
+    "social": "Elsewhere"
+  },
+  "player": { "close": "Close" },
+  "footer": { "rights": "All rights reserved." }
+}

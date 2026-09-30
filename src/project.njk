@@ -1,0 +1,104 @@
+---
+pagination:
+  data: projectPages
+  size: 1
+  alias: entry
+permalink: "/{{ entry.lang }}/work/{{ entry.project.slug }}/"
+layout: base.njk
+eleventyComputed:
+  lang: "{{ entry.lang }}"
+---
+{%- set t = i18n[lang] -%}
+{%- set p = entry.project -%}
+{%- set title = p.title | filmTitle(lang) -%}
+{%- set ratio = "wide" if p.aspect == "2.39" else "hd" -%}
+
+<article class="project">
+  <header class="project__head container">
+    <a class="back-link" href="/{{ lang }}/#work"><span aria-hidden="true">←</span> {{ t.project.back }}</a>
+    <p class="eyebrow">{{ t.formats[p.format] }}</p>
+    <h1 class="project__title">{{ title }}</h1>
+    {%- if title != p.title.original %}
+    <p class="project__original">{{ p.title.original }}</p>
+    {%- endif %}
+  </header>
+
+  <div class="container">
+    {# TODO: set the real Vimeo/YouTube ID for this project in projects.json #}
+    <div class="embed embed--{{ ratio }} reveal" data-provider="{{ p.video.provider }}" data-video-id="{{ p.video.id }}" data-title="{{ title }}">
+      <button class="embed__play" type="button">
+        {{ images[p.poster] | picture(t.project.posterAlt | fmt({ title: title }), "100vw", true) | safe }}
+        <span class="embed__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+        </span>
+        <span class="visually-hidden">{{ t.project.play }}: {{ title }}</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="container project__info">
+    <p class="project__logline reveal">{{ p.logline | tr(lang) }}</p>
+
+    <dl class="project__meta reveal">
+      <div><dt>{{ t.project.role }}</dt><dd>{{ p.role | tr(lang) }}</dd></div>
+      <div><dt>{{ t.project.year }}</dt><dd>{{ p.year }}</dd></div>
+      <div><dt>{{ t.project.format }}</dt><dd>{{ t.formats[p.format] }}</dd></div>
+      {%- if p.runtime %}
+      <div><dt>{{ t.project.runtime }}</dt><dd>{{ t.project.minutes | fmt({ n: p.runtime }) }}</dd></div>
+      {%- endif %}
+    </dl>
+  </div>
+
+  {%- if p.stills.length %}
+  <section class="container project__section" aria-labelledby="stills-title">
+    <h2 class="section__title section__title--sm reveal" id="stills-title">{{ t.project.stills }}</h2>
+    <ul class="stills stills--{{ ratio }}" role="list">
+      {%- for s in p.stills %}
+      {%- set src = s.src if s.src else s %}
+      {%- set alt = (s.alt | tr(lang)) if s.alt else (t.project.stillAlt | fmt({ n: loop.index, title: title })) %}
+      <li class="reveal">{{ images[src] | picture(alt, "(min-width: 760px) 50vw, 100vw") | safe }}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  <div class="container project__columns">
+    {%- if p.crew.length %}
+    <section class="project__section reveal" aria-labelledby="crew-title">
+      <h2 class="section__title section__title--sm" id="crew-title">{{ t.project.crew }}</h2>
+      <dl class="credits">
+        {%- for c in p.crew %}
+        <div>
+          <dt>{{ t.crew[c.role] or c.role }}</dt>
+          <dd>{{ t.name if c.name == "self" else c.name }}</dd>
+        </div>
+        {%- endfor %}
+      </dl>
+    </section>
+    {%- endif %}
+
+    {%- if p.festivals and p.festivals.length %}
+    <section class="project__section reveal" aria-labelledby="fest-title">
+      <h2 class="section__title section__title--sm" id="fest-title">{{ t.project.festivals }}</h2>
+      <ul class="awards awards--compact" role="list">
+        {%- for f in p.festivals %}
+        <li class="awards__row">
+          <span class="awards__year">{{ f.year }}</span>
+          <span class="awards__name">{{ f.name }}</span>
+          <span class="awards__result">{{ f.result | tr(lang) }}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endif %}
+  </div>
+
+  {%- set n = entry.next %}
+  {%- set nextTitle = n.title | filmTitle(lang) %}
+  <nav class="container next-project reveal" aria-label="{{ t.project.next }}">
+    <a class="next-project__link" href="/{{ lang }}/work/{{ n.slug }}/">
+      <span class="eyebrow">{{ t.project.next }}</span>
+      <span class="next-project__title">{{ nextTitle }} <span aria-hidden="true">→</span></span>
+    </a>
+  </nav>
+</article>

@@ -1,0 +1,27 @@
+[
+  {
+    "_todo": "TODO: sample videos (open movies by Blender Foundation). Replace with your own links. Only \"url\" is required.",
+    "url": "https://www.youtube.com/watch?v=R6MlUcmOul8",
+    "title": "Tears of Steel",
+    "year": 2024,
+    "category": { "en": "Short film", "ru": "Короткий метр", "uk": "Короткий метр", "es": "Cortometraje" }
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=eRsGyueVLvQ",
+    "title": "Sintel",
+    "year": 2024,
+    "category": { "en": "Travel film", "ru": "Тревел-видео", "uk": "Тревел-відео", "es": "Vídeo de viaje" }
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=WhWc3b3KhnY",
+    "title": "Spring",
+    "year": 2023,
+    "category": { "en": "Experiment", "ru": "Эксперимент", "uk": "Експеримент", "es": "Experimento" }
+  },
+  {
+    "url": "https://vimeo.com/76979871",
+    "title": "Vimeo sample",
+    "year": 2023,
+    "category": { "en": "Behind the scenes", "ru": "Со съёмок", "uk": "Зі зйомок", "es": "Detrás de cámaras" }
+  }
+]

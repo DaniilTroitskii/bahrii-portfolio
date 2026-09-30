@@ -1,0 +1,13 @@
+[
+  {
+    "_todo": "TODO: festivals and screenings not tied to a single project. Festivals of a specific film go into its \"festivals\" list in projects.json.",
+    "year": 2025,
+    "name": "University of Utah — Film & Media Arts Senior Thesis Screening",
+    "result": {
+      "en": "Student screening",
+      "ru": "Студенческий показ",
+      "uk": "Студентський показ",
+      "es": "Proyección estudiantil"
+    }
+  }
+]

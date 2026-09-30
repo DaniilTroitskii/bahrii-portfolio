@@ -1,0 +1,209 @@
+---
+pagination:
+  data: site.languages
+  size: 1
+  alias: language
+permalink: "/{{ language.code }}/"
+layout: base.njk
+eleventyComputed:
+  lang: "{{ language.code }}"
+---
+{%- set t = i18n[lang] -%}
+
+{# ───────── Hero ───────── #}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__media">
+    {# TODO: replace src/assets/img/reel-poster.jpg with a real frame from the showreel #}
+    {{ images[site.reel.poster] | picture(t.hero.posterAlt, "100vw", true) | safe }}
+    {%- if site.reel.loop %}
+    <video class="hero__video" src="/assets/video/{{ site.reel.loop }}" autoplay muted loop playsinline preload="metadata" aria-hidden="true" data-hero-video></video>
+    {%- endif %}
+  </div>
+  {# Camera viewfinder: frame corners + running timecode (decorative) #}
+  <div class="viewfinder" aria-hidden="true">
+    <span class="viewfinder__rec"><span class="viewfinder__dot"></span>REC</span>
+    <span class="viewfinder__tc" data-timecode>00:00:00:00</span>
+  </div>
+  <div class="hero__content container">
+    <p class="eyebrow">{{ t.hero.role }}</p>
+    <h1 class="hero__title" id="hero-title">{{ t.name }}</h1>
+    <p class="hero__tagline">{{ t.hero.tagline }}</p>
+    <button class="btn btn--accent" type="button" data-open-reel>
+      <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+      {{ t.hero.watchReel }}
+    </button>
+  </div>
+</section>
+
+{# ───────── Video (hidden when videos.json is empty) ───────── #}
+{%- if videoList.length %}
+<section class="section" id="video" aria-labelledby="video-title">
+  <div class="container">
+    <h2 class="section__title reveal" id="video-title">{{ t.videos.title }}</h2>
+    <ul class="video-grid" role="list">
+      {%- for v in videoList %}
+      {%- set vTitle = v.title | filmTitle(lang) if v.title else "" %}
+      <li class="video-card reveal">
+        <button class="video-card__play" type="button" data-play-video
+                data-provider="{{ v.provider }}" data-video-id="{{ v.id }}" data-title="{{ vTitle }}">
+          <span class="video-card__media">
+            {%- if v.poster and images[v.poster] %}
+            {{ images[v.poster] | picture("", "(min-width: 1000px) 33vw, (min-width: 600px) 50vw, 100vw") | safe }}
+            {%- else %}
+            <img src="{{ v.thumb }}" alt="" width="480" height="360" loading="lazy" decoding="async">
+            {%- endif %}
+            <span class="video-card__icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </span>
+          <span class="visually-hidden">{{ t.videos.play }}: </span>
+          <span class="video-card__title">{{ vTitle }}</span>
+        </button>
+        {%- if v.year or v.category %}
+        <p class="card__meta">
+          {%- if v.year %}<span>{{ v.year }}</span>{% endif %}
+          {%- if v.category %}<span>{{ v.category | tr(lang) }}</span>{% endif %}
+        </p>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
+{# ───────── Photo (every image in src/assets/img/photos/) ───────── #}
+{%- if photos.length %}
+{%- set shownFirst = 12 %}
+<section class="section section--alt" id="photo" aria-labelledby="photo-title">
+  <div class="container">
+    <h2 class="section__title reveal" id="photo-title">{{ t.photos.title }}</h2>
+    <ul class="photo-grid{% if photos.length > shownFirst %} is-collapsed{% endif %}" role="list" data-photo-grid>
+      {%- for ph in photos %}
+      {%- set meta = images[ph.key] %}
+      {%- set phAlt = (ph.caption | tr(lang)) if ph.caption else (t.photos.alt | fmt({ n: loop.index })) %}
+      <li class="photo-grid__item{% if loop.index > shownFirst %} is-extra{% endif %}">
+        <a href="{{ meta | largestJpeg }}" data-photo data-srcset="{{ meta | srcsetWebp }}"
+           data-alt="{{ phAlt }}" data-caption="{{ ph.caption | tr(lang) if ph.caption else '' }}">
+          {{ meta | picture(phAlt, "(min-width: 1000px) 33vw, (min-width: 600px) 50vw, 100vw") | safe }}
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- if photos.length > shownFirst %}
+    <p class="photo-more"><button class="btn" type="button" data-photo-more>{{ t.photos.more }} <span class="photo-more__count">+{{ photos.length - shownFirst }}</span></button></p>
+    {%- endif %}
+  </div>
+</section>
+
+<dialog class="lightbox" id="lightbox" aria-label="{{ t.photos.title }}">
+  <figure class="lightbox__figure">
+    <figcaption class="lightbox__caption" data-lb-caption></figcaption>
+  </figure>
+  <p class="lightbox__counter" aria-live="polite" data-lb-counter></p>
+  <button class="lightbox__nav lightbox__nav--prev" type="button" data-lb-prev aria-label="{{ t.photos.prev }}">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--next" type="button" data-lb-next aria-label="{{ t.photos.next }}">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+  </button>
+  <button class="reel-dialog__close" type="button" data-lb-close>
+    <span aria-hidden="true">×</span><span class="visually-hidden">{{ t.player.close }}</span>
+  </button>
+</dialog>
+{%- endif %}
+
+{# ───────── Work ───────── #}
+<section class="section" id="work" aria-labelledby="work-title">
+  <div class="container">
+    <h2 class="section__title reveal" id="work-title">{{ t.work.title }}</h2>
+    <ul class="work-grid" role="list">
+      {%- for p in projects %}
+        {% include "project-card.njk" %}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{# ───────── About ───────── #}
+<section class="section section--alt" id="about" aria-labelledby="about-title">
+  <div class="container about">
+    <div class="about__photo reveal">
+      {# TODO: replace src/assets/img/portrait.jpg with a real portrait (4:5, at least 1200×1500) #}
+      {{ images[site.portrait] | picture(t.about.photoAlt, "(min-width: 900px) 40vw, 100vw") | safe }}
+    </div>
+    <div class="about__text">
+      <h2 class="section__title reveal" id="about-title">{{ t.about.title }}</h2>
+      <div class="about__bio reveal">
+        {%- for para in t.about.bio %}
+        <p>{{ para }}</p>
+        {%- endfor %}
+        <p class="about__based">{{ t.about.based }}</p>
+      </div>
+
+      <div class="about__facts reveal">
+        <div class="fact">
+          <h3 class="fact__label">{{ t.about.education }}</h3>
+          <p>{{ t.about.degree }}<br>{{ t.about.school }}, {{ t.about.gradYear }}</p>
+        </div>
+        <div class="fact">
+          <h3 class="fact__label">{{ t.about.skills }}</h3>
+          <ul class="chips" role="list">
+            {%- for s in t.about.skillsList %}<li>{{ s }}</li>{% endfor %}
+          </ul>
+        </div>
+        <div class="fact">
+          <h3 class="fact__label">{{ t.about.gear }}</h3>
+          <dl class="gear">
+            {%- for g in site.gear %}
+            <div>
+              <dt>{{ t.about.gearCategories[g.category] }}</dt>
+              <dd>{{ g.items | join(", ") }}</dd>
+            </div>
+            {%- endfor %}
+          </dl>
+        </div>
+      </div>
+
+      <a class="btn reveal" href="{{ resumes[lang] }}" download>
+        <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        {{ t.about.resume }}
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ───────── Festivals & Awards (hidden when empty) ───────── #}
+{%- if awards.length %}
+<section class="section" id="awards" aria-labelledby="awards-title">
+  <div class="container">
+    <h2 class="section__title reveal" id="awards-title">{{ t.awards.title }}</h2>
+    <ul class="awards reveal" role="list">
+      {%- for a in awards %}
+      <li class="awards__row">
+        <span class="awards__year">{{ a.year }}</span>
+        <span class="awards__name">{{ a.name }}</span>
+        <span class="awards__result">
+          {{ a.result | tr(lang) }}
+          {%- if a.projectSlug %} — <a href="/{{ lang }}/work/{{ a.projectSlug }}/">{{ a.projectTitle | filmTitle(lang) }}</a>{% endif %}
+        </span>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+
+{# ───────── Contact ───────── #}
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <h2 class="section__title reveal" id="contact-title">{{ t.contact.title }}</h2>
+    <p class="contact__lead reveal">{{ t.contact.lead }}</p>
+    {# TODO: set the real email in src/_data/site.json #}
+    <a class="contact__email reveal" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    <h3 class="visually-hidden">{{ t.contact.social }}</h3>
+    <ul class="social reveal" role="list">
+      {%- for s in site.social %}{% if s.url %}
+      <li><a href="{{ s.url }}" rel="me noopener" target="_blank">{{ s.name }}</a></li>
+      {%- endif %}{% endfor %}
+    </ul>
+  </div>
+</section>

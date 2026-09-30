@@ -1,0 +1,228 @@
+[
+  {
+    "_todo": "TODO: sample project. Replace the title, logline, video ID, crew and images with real ones.",
+    "slug": "quiet-hours",
+    "title": { "original": "Quiet Hours", "ru": "Тихие часы", "uk": "Тихі години", "es": "Horas tranquilas" },
+    "year": 2025,
+    "format": "short",
+    "runtime": 14,
+    "aspect": "2.39",
+    "role": {
+      "en": "Writer & Director",
+      "ru": "Автор сценария и режиссёр",
+      "uk": "Автор сценарію та режисер",
+      "es": "Guion y dirección"
+    },
+    "logline": {
+      "en": "After her father's stroke, a night-shift nurse spends one long winter night deciding whether to finally come home.",
+      "ru": "После инсульта отца медсестра ночной смены проводит одну долгую зимнюю ночь, решая, вернуться ли наконец домой.",
+      "uk": "Після інсульту батька медсестра нічної зміни проводить одну довгу зимову ніч, вирішуючи, чи нарешті повернутися додому.",
+      "es": "Tras el ictus de su padre, una enfermera del turno de noche pasa una larga noche de invierno decidiendo si por fin vuelve a casa."
+    },
+    "video": { "provider": "vimeo", "id": "76979871" },
+    "poster": "projects/quiet-hours/poster.jpg",
+    "stills": [
+      "projects/quiet-hours/still-1.jpg",
+      "projects/quiet-hours/still-2.jpg",
+      "projects/quiet-hours/still-3.jpg",
+      "projects/quiet-hours/still-4.jpg"
+    ],
+    "crew": [
+      { "role": "director", "name": "self" },
+      { "role": "writer", "name": "self" },
+      { "role": "dop", "name": "[Name Surname]" },
+      { "role": "editor", "name": "[Name Surname]" },
+      { "role": "sound", "name": "[Name Surname]" },
+      { "role": "cast", "name": "[Name Surname], [Name Surname]" }
+    ],
+    "festivals": [
+      {
+        "year": 2025,
+        "name": "[Festival name]",
+        "result": { "en": "Official Selection", "ru": "Официальная программа", "uk": "Офіційна програма", "es": "Selección oficial" }
+      }
+    ]
+  },
+  {
+    "_todo": "TODO: sample project.",
+    "slug": "salt-and-silence",
+    "title": { "original": "Salt & Silence" },
+    "year": 2024,
+    "format": "documentary",
+    "runtime": 22,
+    "aspect": "16:9",
+    "role": {
+      "en": "Cinematographer",
+      "ru": "Оператор-постановщик",
+      "uk": "Оператор-постановник",
+      "es": "Dirección de fotografía"
+    },
+    "logline": {
+      "en": "A portrait of the last family running a roadside motel on the edge of the Bonneville Salt Flats.",
+      "ru": "Портрет последней семьи, которая держит придорожный мотель на краю солончака Бонневилль.",
+      "uk": "Портрет останньої родини, що тримає придорожній мотель на краю солончака Бонневілль.",
+      "es": "Retrato de la última familia que regenta un motel de carretera al borde del salar de Bonneville."
+    },
+    "video": { "provider": "vimeo", "id": "76979871" },
+    "poster": "projects/salt-and-silence/poster.jpg",
+    "stills": [
+      "projects/salt-and-silence/still-1.jpg",
+      "projects/salt-and-silence/still-2.jpg",
+      "projects/salt-and-silence/still-3.jpg"
+    ],
+    "crew": [
+      { "role": "director", "name": "[Name Surname]" },
+      { "role": "dop", "name": "self" },
+      { "role": "editor", "name": "[Name Surname]" },
+      { "role": "producer", "name": "[Name Surname]" }
+    ],
+    "festivals": [
+      {
+        "year": 2024,
+        "name": "[Festival name]",
+        "result": { "en": "Best Cinematography", "ru": "Лучшая операторская работа", "uk": "Найкраща операторська робота", "es": "Mejor fotografía" }
+      }
+    ]
+  },
+  {
+    "_todo": "TODO: sample project. YouTube ID aqz-KE-bpKQ is Big Buck Bunny (open movie by Blender Foundation).",
+    "slug": "neon-hymn",
+    "title": { "original": "Neon Hymn" },
+    "year": 2024,
+    "format": "music_video",
+    "runtime": 4,
+    "aspect": "16:9",
+    "role": {
+      "en": "Director & Cinematographer",
+      "ru": "Режиссёр и оператор-постановщик",
+      "uk": "Режисер і оператор-постановник",
+      "es": "Dirección y fotografía"
+    },
+    "logline": {
+      "en": "A music video for [Artist]: a gospel choir rehearses alone in an empty bowling alley after closing time.",
+      "ru": "Клип для [исполнитель]: госпел-хор репетирует в пустом боулинге после закрытия.",
+      "uk": "Кліп для [виконавець]: госпел-хор репетирує в порожньому боулінгу після закриття.",
+      "es": "Videoclip para [artista]: un coro góspel ensaya a solas en una bolera vacía después del cierre."
+    },
+    "video": { "provider": "youtube", "id": "aqz-KE-bpKQ" },
+    "poster": "projects/neon-hymn/poster.jpg",
+    "stills": [
+      "projects/neon-hymn/still-1.jpg",
+      "projects/neon-hymn/still-2.jpg",
+      "projects/neon-hymn/still-3.jpg",
+      "projects/neon-hymn/still-4.jpg"
+    ],
+    "crew": [
+      { "role": "director", "name": "self" },
+      { "role": "dop", "name": "self" },
+      { "role": "producer", "name": "[Name Surname]" },
+      { "role": "colorist", "name": "[Name Surname]" }
+    ],
+    "festivals": []
+  },
+  {
+    "_todo": "TODO: sample project.",
+    "slug": "morning-ritual",
+    "title": { "original": "Morning Ritual" },
+    "year": 2023,
+    "format": "commercial",
+    "runtime": 1,
+    "aspect": "16:9",
+    "role": {
+      "en": "Cinematographer & Editor",
+      "ru": "Оператор-постановщик и режиссёр монтажа",
+      "uk": "Оператор-постановник і режисер монтажу",
+      "es": "Fotografía y montaje"
+    },
+    "logline": {
+      "en": "A 60-second spec commercial for a local coffee roaster, built around the quiet rituals of the first hour of the day.",
+      "ru": "Шестидесятисекундный спек-ролик для местной кофейной обжарки — о тихих ритуалах первого часа дня.",
+      "uk": "Шістдесятисекундний спек-ролик для місцевої кавової обсмажувальні — про тихі ритуали першої години дня.",
+      "es": "Spot spec de 60 segundos para un tostador de café local, construido en torno a los rituales tranquilos de la primera hora del día."
+    },
+    "video": { "provider": "vimeo", "id": "76979871" },
+    "poster": "projects/morning-ritual/poster.jpg",
+    "stills": [
+      "projects/morning-ritual/still-1.jpg",
+      "projects/morning-ritual/still-2.jpg",
+      "projects/morning-ritual/still-3.jpg"
+    ],
+    "crew": [
+      { "role": "director", "name": "[Name Surname]" },
+      { "role": "dop", "name": "self" },
+      { "role": "editor", "name": "self" },
+      { "role": "producer", "name": "[Name Surname]" }
+    ],
+    "festivals": []
+  },
+  {
+    "_todo": "TODO: sample project.",
+    "slug": "paper-moons",
+    "title": { "original": "Paper Moons" },
+    "year": 2023,
+    "format": "short",
+    "runtime": 9,
+    "aspect": "2.39",
+    "role": {
+      "en": "Editor",
+      "ru": "Режиссёр монтажа",
+      "uk": "Режисер монтажу",
+      "es": "Montaje"
+    },
+    "logline": {
+      "en": "Two estranged brothers have one week to rebuild their late mother's puppet theatre — and to start talking to each other again.",
+      "ru": "У двух братьев, давно переставших общаться, есть неделя, чтобы восстановить кукольный театр покойной матери — и снова заговорить друг с другом.",
+      "uk": "Двоє братів, які давно не спілкуються, мають тиждень, щоб відновити ляльковий театр покійної матері — і знову заговорити одне з одним.",
+      "es": "Dos hermanos distanciados tienen una semana para reconstruir el teatro de títeres de su difunta madre y volver a hablarse."
+    },
+    "video": { "provider": "vimeo", "id": "76979871" },
+    "poster": "projects/paper-moons/poster.jpg",
+    "stills": [
+      "projects/paper-moons/still-1.jpg",
+      "projects/paper-moons/still-2.jpg",
+      "projects/paper-moons/still-3.jpg"
+    ],
+    "crew": [
+      { "role": "director", "name": "[Name Surname]" },
+      { "role": "writer", "name": "[Name Surname]" },
+      { "role": "dop", "name": "[Name Surname]" },
+      { "role": "editor", "name": "self" }
+    ],
+    "festivals": []
+  },
+  {
+    "_todo": "TODO: sample project.",
+    "slug": "last-lift",
+    "title": { "original": "Last Lift" },
+    "year": 2022,
+    "format": "documentary",
+    "runtime": 12,
+    "aspect": "16:9",
+    "role": {
+      "en": "Director & Editor",
+      "ru": "Режиссёр и режиссёр монтажа",
+      "uk": "Режисер і режисер монтажу",
+      "es": "Dirección y montaje"
+    },
+    "logline": {
+      "en": "A ski-lift operator spends his last season on the mountain filming everything he is about to leave behind.",
+      "ru": "Оператор горнолыжного подъёмника проводит в горах последний сезон и снимает на камеру всё, что скоро оставит.",
+      "uk": "Оператор гірськолижного підйомника проводить у горах останній сезон і знімає на камеру все, що скоро залишить.",
+      "es": "Un operador de telesilla pasa su última temporada en la montaña filmando todo lo que está a punto de dejar atrás."
+    },
+    "video": { "provider": "vimeo", "id": "76979871" },
+    "poster": "projects/last-lift/poster.jpg",
+    "stills": [
+      "projects/last-lift/still-1.jpg",
+      "projects/last-lift/still-2.jpg",
+      "projects/last-lift/still-3.jpg"
+    ],
+    "crew": [
+      { "role": "director", "name": "self" },
+      { "role": "editor", "name": "self" },
+      { "role": "sound", "name": "[Name Surname]" },
+      { "role": "composer", "name": "[Name Surname]" }
+    ],
+    "festivals": []
+  }
+]

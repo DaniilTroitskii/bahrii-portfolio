@@ -1,0 +1,9 @@
+{
+  "_todo": "TODO: optional captions for photos in src/assets/img/photos/. Key = file name. The caption is also used as the image description for screen readers.",
+  "01.jpg": {
+    "en": "Bonneville Salt Flats at dawn",
+    "ru": "Солончак Бонневилль на рассвете",
+    "uk": "Солончак Бонневілль на світанку",
+    "es": "El salar de Bonneville al amanecer"
+  }
+}

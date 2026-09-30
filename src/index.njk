@@ -1,0 +1,45 @@
+---
+permalink: /index.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ i18n.en.name }}</title>
+  <meta name="description" content="{{ i18n.en.meta.description }}">
+  <meta name="theme-color" content="#0b0b0c">
+  {%- for l in site.languages %}
+  <link rel="alternate" hreflang="{{ l.code }}" href="{{ ('/' + l.code + '/') | absUrl }}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ '/' | absUrl }}">
+  <script>
+    // Saved choice → browser language → English.
+    (function () {
+      var langs = {{ site.languages | langCodes | dump | safe }};
+      var base = "{{ pathPrefix }}";
+      var lang = null;
+      try { lang = localStorage.getItem("lang"); } catch (e) {}
+      if (langs.indexOf(lang) === -1) {
+        lang = null;
+        var prefs = navigator.languages || [navigator.language || ""];
+        for (var i = 0; i < prefs.length && !lang; i++) {
+          var code = String(prefs[i]).toLowerCase().split("-")[0];
+          if (langs.indexOf(code) !== -1) lang = code;
+        }
+      }
+      location.replace(base + (lang || "{{ site.defaultLang }}") + "/");
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url={{ pathPrefix }}{{ site.defaultLang }}/"></noscript>
+  <style>body{background:#0b0b0c;color:#ecebe8;font:16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#e3a857}</style>
+</head>
+<body>
+  <p>
+    {%- for l in site.languages %}
+    <a href="/{{ l.code }}/" hreflang="{{ l.code }}" lang="{{ l.code }}">{{ l.name }}</a>{% if not loop.last %} · {% endif %}
+    {%- endfor %}
+  </p>
+</body>
+</html>

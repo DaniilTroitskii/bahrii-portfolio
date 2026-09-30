@@ -1,0 +1,99 @@
+{
+  "_todo": "TODO: el texto entre [corchetes] es un marcador de posición: sustitúyelo por datos reales.",
+  "name": "Yevhenii Bahrii",
+  "meta": {
+    "description": "Yevhenii Bahrii — director y director de fotografía, graduado en Film and Media Arts por la Universidad de Utah. Showreel, cortometrajes, videoclips y publicidad.",
+    "projectTitle": "{title} ({year}) — {name}"
+  },
+  "a11y": {
+    "skip": "Saltar al contenido",
+    "menu": "Menú",
+    "language": "Idioma",
+    "home": "Página de inicio"
+  },
+  "nav": { "work": "Trabajos", "video": "Vídeo", "photo": "Fotos", "about": "Sobre mí", "awards": "Festivales", "contact": "Contacto" },
+  "hero": {
+    "role": "Director y director de fotografía",
+    "tagline": "Historias íntimas, centradas en sus personajes, contadas con luz y silencio.",
+    "watchReel": "Ver showreel",
+    "reelTitle": "Showreel",
+    "posterAlt": "Fotograma del showreel"
+  },
+  "work": { "title": "Trabajos seleccionados" },
+  "videos": { "title": "Vídeo", "play": "Reproducir" },
+  "photos": {
+    "title": "Fotografía",
+    "alt": "Fotografía {n}",
+    "more": "Ver más",
+    "prev": "Foto anterior",
+    "next": "Foto siguiente"
+  },
+  "formats": {
+    "short": "Cortometraje",
+    "music_video": "Videoclip",
+    "commercial": "Publicidad",
+    "documentary": "Documental"
+  },
+  "project": {
+    "year": "Año",
+    "format": "Formato",
+    "runtime": "Duración",
+    "minutes": "{n} min",
+    "role": "Mi función",
+    "crew": "Ficha técnica",
+    "stills": "Fotogramas",
+    "festivals": "Festivales y premios",
+    "back": "Todos los trabajos",
+    "next": "Siguiente proyecto",
+    "play": "Reproducir vídeo",
+    "stillAlt": "Fotograma {n} de «{title}»",
+    "posterAlt": "Fotograma de «{title}»"
+  },
+  "crew": {
+    "director": "Dirección",
+    "writer": "Guion",
+    "dop": "Dirección de fotografía",
+    "editor": "Montaje",
+    "producer": "Producción",
+    "sound": "Sonido",
+    "composer": "Música original",
+    "colorist": "Etalonaje",
+    "production_designer": "Dirección de arte",
+    "cast": "Reparto"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "photoAlt": "Retrato de Yevhenii Bahrii",
+    "based": "Con base en [ciudad, estado]",
+    "bio": [
+      "Soy director y director de fotografía. Me atraen las historias íntimas, centradas en los personajes: lo que la gente no llega a decir en voz alta.",
+      "En la Universidad de Utah realicé cortometrajes de ficción, documentales y videoclips, y en muchos de ellos asumí a la vez la dirección y la cámara.",
+      "Para mí, la luz, la interpretación y el ritmo pesan lo mismo, y trabajo mejor en equipos pequeños y comprometidos.",
+      "Actualmente busco proyectos como director, director de fotografía o dentro de un equipo de cámara."
+    ],
+    "education": "Formación",
+    "degree": "[BA / BFA] en Cine y Artes Mediáticas (Film and Media Arts)",
+    "school": "Universidad de Utah",
+    "gradYear": "[2025]",
+    "skills": "Habilidades",
+    "skillsList": [
+      "Dirección de actores",
+      "Fotografía e iluminación",
+      "Montaje",
+      "Etalonaje",
+      "Guion",
+      "Coordinación de rodaje"
+    ],
+    "gear": "Equipo y software",
+    "gearCategories": { "cameras": "Cámaras", "lighting": "Iluminación", "post": "Postproducción" },
+    "resume": "Descargar CV (PDF)"
+  },
+  "awards": { "title": "Festivales y premios" },
+  "contact": {
+    "title": "Trabajemos juntos",
+    "lead": "Disponible para cortometrajes, videoclips, publicidad y documentales. La forma más rápida de contactarme es por correo.",
+    "social": "Redes"
+  },
+  "player": { "close": "Cerrar" },
+  "footer": { "rights": "Todos los derechos reservados." }
+}

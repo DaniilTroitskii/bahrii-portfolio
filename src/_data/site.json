@@ -1,0 +1,32 @@
+{
+  "_todo": "TODO: replace url, email, social links, reel and gear with real data. Values in [brackets] are placeholders.",
+  "url": "https://example.com",
+  "defaultLang": "en",
+  "languages": [
+    { "code": "en", "label": "EN", "name": "English", "locale": "en_US" },
+    { "code": "ru", "label": "RU", "name": "Русский", "locale": "ru_RU" },
+    { "code": "uk", "label": "UK", "name": "Українська", "locale": "uk_UA" },
+    { "code": "es", "label": "ES", "name": "Español", "locale": "es_ES" }
+  ],
+  "email": "[your.email@example.com]",
+  "social": [
+    { "name": "Instagram", "url": "https://www.instagram.com/TODO" },
+    { "name": "Vimeo", "url": "https://vimeo.com/TODO" },
+    { "name": "IMDb", "url": "" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/TODO" }
+  ],
+  "reel": {
+    "_todo": "TODO: put your showreel's Vimeo or YouTube ID here. 76979871 is a Vimeo demo video.",
+    "provider": "vimeo",
+    "id": "76979871",
+    "poster": "reel-poster.jpg",
+    "_loop": "Optional: a short silent clip (5–15 s, MP4, under ~5 MB) playing behind the name on the first screen. Put it in src/assets/video/ and write its file name here, e.g. \"hero-loop.mp4\". Empty = still frame only.",
+    "loop": ""
+  },
+  "portrait": "portrait.jpg",
+  "gear": [
+    { "category": "cameras", "items": ["ARRI Alexa Mini", "Sony FX6", "Blackmagic Pocket Cinema Camera 6K"] },
+    { "category": "lighting", "items": ["Aputure 600d", "Astera Titan Tubes", "Kino Flo"] },
+    { "category": "post", "items": ["DaVinci Resolve", "Adobe Premiere Pro", "After Effects"] }
+  ]
+}

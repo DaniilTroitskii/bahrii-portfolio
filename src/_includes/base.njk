@@ -1,0 +1,63 @@
+{#- Shared layout for every language page. Title, description and Open Graph are built here. -#}
+{%- set t = i18n[lang] -%}
+{%- set langInfo = site.languages | selectattr("code", "equalto", lang) | first -%}
+{%- if entry -%}
+  {%- set p = entry.project -%}
+  {%- set filmName = p.title | filmTitle(lang) -%}
+  {%- set pageTitle = t.meta.projectTitle | fmt({ title: filmName, year: p.year, name: t.name }) -%}
+  {%- set pageDescription = p.logline | tr(lang) -%}
+  {%- set ogImg = images[p.poster] -%}
+  {%- set ogType = "video.other" -%}
+{%- else -%}
+  {%- set pageTitle = t.name + " — " + t.hero.role -%}
+  {%- set pageDescription = t.meta.description -%}
+  {%- set ogImg = images[site.reel.poster] -%}
+  {%- set ogType = "profile" -%}
+{%- endif -%}
+<!doctype html>
+<html lang="{{ lang }}" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="canonical" href="{{ page.url | absUrl }}">
+  {%- for l in site.languages %}
+  <link rel="alternate" hreflang="{{ l.code }}" href="{{ page.url | swapLang(l.code) | absUrl }}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ page.url | swapLang(site.defaultLang) | absUrl }}">
+
+  <meta property="og:type" content="{{ ogType }}">
+  <meta property="og:site_name" content="{{ t.name }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:url" content="{{ page.url | absUrl }}">
+  <meta property="og:locale" content="{{ langInfo.locale }}">
+  {%- for l in site.languages %}{% if l.code != lang %}
+  <meta property="og:locale:alternate" content="{{ l.locale }}">
+  {%- endif %}{% endfor %}
+  {%- if ogImg %}
+  <meta property="og:image" content="{{ ogImg | ogImage }}">
+  {%- endif %}
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#main">{{ t.a11y.skip }}</a>
+  {% include "header.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include "footer.njk" %}
+  {% include "reel-dialog.njk" %}
+  <div class="grain" aria-hidden="true"></div>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

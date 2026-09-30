@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>© {{ buildYear }} {{ t.name }}. {{ t.footer.rights }}</p>
+    <ul class="site-footer__langs">
+      {%- for l in site.languages %}
+      <li><a href="{{ page.url | swapLang(l.code) }}" hreflang="{{ l.code }}" lang="{{ l.code }}" data-lang-link="{{ l.code }}"
+        {% if l.code == lang %}aria-current="true"{% endif %}>{{ l.name }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</footer>

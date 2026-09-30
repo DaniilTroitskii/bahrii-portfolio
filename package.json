@@ -1,0 +1,21 @@
+{
+  "name": "bahrii-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Yevhenii Bahrii — film director and cinematographer",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "placeholders": "node scripts/make-placeholders.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-img": "^6.0.4"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,39 @@
+<header class="site-header" data-header>
+  <div class="site-header__inner">
+    <a class="brand" href="/{{ lang }}/" aria-label="{{ t.name }} — {{ t.a11y.home }}">{{ t.name }}</a>
+
+    <nav class="site-nav" id="site-nav" aria-label="{{ t.a11y.menu }}">
+      <ul>
+        {%- if videoList.length %}
+        <li><a href="/{{ lang }}/#video">{{ t.nav.video }}</a></li>
+        {%- endif %}
+        {%- if photos.length %}
+        <li><a href="/{{ lang }}/#photo">{{ t.nav.photo }}</a></li>
+        {%- endif %}
+        <li><a href="/{{ lang }}/#work">{{ t.nav.work }}</a></li>
+        <li><a href="/{{ lang }}/#about">{{ t.nav.about }}</a></li>
+        {%- if awards.length %}
+        <li><a href="/{{ lang }}/#awards">{{ t.nav.awards }}</a></li>
+        {%- endif %}
+        <li><a href="/{{ lang }}/#contact">{{ t.nav.contact }}</a></li>
+      </ul>
+    </nav>
+
+    <nav class="lang-switch" aria-label="{{ t.a11y.language }}">
+      <ul>
+        {%- for l in site.languages %}
+        <li>
+          <a href="{{ page.url | swapLang(l.code) }}" hreflang="{{ l.code }}" lang="{{ l.code }}"
+             title="{{ l.name }}" aria-label="{{ l.name }}" data-lang-link="{{ l.code }}"
+             {% if l.code == lang %}aria-current="true"{% endif %}>{{ l.label }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span class="visually-hidden">{{ t.a11y.menu }}</span>
+      <span class="menu-toggle__bars" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
